@@ -27,6 +27,7 @@ export default async function handler(
       amount,
       currency,
       description,
+      automatic_payment_methods: {enabled: true}
     });
     res.status(200).json({ client_secret: pi.client_secret });
   } catch (e: Stripe.errors.StripeAPIError | any) {
